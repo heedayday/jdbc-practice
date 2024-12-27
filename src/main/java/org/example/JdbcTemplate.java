@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class JdbcTemplate {
 
+    //공통 코드는 따로 정리하여 반복 줄이기
     public void executeUpdate(String sql, PreparedStatementSetter pss) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -15,8 +16,8 @@ public class JdbcTemplate {
             con = ConnectionManager.getConnection();
             pstmt = con.prepareStatement(sql);
             pss.setPreparedStatement(pstmt);
-
             pstmt.executeUpdate();
+
         } finally {
             if (pstmt != null) {
                 pstmt.close();

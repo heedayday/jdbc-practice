@@ -8,10 +8,6 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
     private static final String DB_DRIVER = "org.h2.Driver";
-
-
-
-
     private static final String DB_URL = "jdbc:h2:mem://localhost/~/jdbc-practice;MODE=MySQL;DB_CLOSE_DELAY=-1";
     private static final String DB_USERNAME = "sa";
     private static final String DB_PW = "";
@@ -19,6 +15,7 @@ public class ConnectionManager {
 
     private static final DataSource ds;
 
+    // DB 연결 HikariDataSource https://taler.tistory.com/13 https://csg1353.tistory.com/206
     static {
         HikariDataSource hikariDataSource = new HikariDataSource();
         hikariDataSource.setDriverClassName(DB_DRIVER);
