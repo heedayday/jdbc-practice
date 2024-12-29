@@ -12,6 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserDaoTest {
 
+    //테스트 코드
     @BeforeEach
     void setUp() {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
